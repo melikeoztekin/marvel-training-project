@@ -1,0 +1,16 @@
+<atom-input
+  placeHolder="Search Input"
+  inputType="text"
+  iconShow="fa-solid fa-magnifying-glass"
+  iconHide="fa-solid fa-magnifying-glass"
+></atom-input>
+<div *ngFor="let product of productList">
+  <div class="mb-2">
+    <atom-admin-product-item
+      phoneImage="{{ product.phoneImage }}"
+      phoneBrand="{{ product.phoneBrand }}"
+      phoneModel="{{ product.phoneModel }}"
+      price="{{ product.price }}"
+    ></atom-admin-product-item>
+  </div>
+</div>

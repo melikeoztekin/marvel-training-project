@@ -1,0 +1,232 @@
+<!-- Butona arka plan rengi verilmelidir-->
+<div class="container pt-5">
+  <h2 class="text-center">- UI Kit -</h2>
+  <atom-frame borderColor="#31685C" class="row"> <navbar></navbar> </atom-frame
+  ><atom-frame borderColor="#61A1FE" class="row">
+    <footer-black></footer-black>
+  </atom-frame>
+  <atom-frame borderColor="black" class="row">
+    <h3>Buttons</h3>
+    <hr />
+    <div class="d-flex justify-content-between flex-wrap">
+      <div>
+        <!-- Butona text verilmediği zaman küçük bir görüntü olur sadece-->
+        <p class="text-dark">Default button</p>
+        <atom-button
+          buttonText="Default Button"
+          buttonType="button"
+        ></atom-button>
+      </div>
+      <div>
+        <p class="text-success">Change color button</p>
+        <atom-button
+          buttonColor="bg-success"
+          buttonText="Color Button"
+          buttonType="button"
+        ></atom-button>
+      </div>
+      <div>
+        <p class="text-danger">Icon button</p>
+        <atom-button
+          buttonColor="bg-danger"
+          buttonText="Icon Button"
+          buttonType="button"
+          icon="fa-solid fa-shopping-cart"
+        ></atom-button>
+      </div>
+      <div>
+        <!-- Disabled buton kullanımı için ts de logic yazılması gerekir -->
+        <p class="text-primary">Disable button</p>
+        <atom-button
+          buttonColor="bg-primary"
+          buttonText="Disable Button"
+          buttonType="button"
+          icon="fa-solid fa-check"
+          [isDisabled]="isButtonDisabled"
+        ></atom-button>
+      </div>
+      <div>
+        <!-- Button type "click, button, submit" tipinde olabilir -->
+        <p class="text-warning">Submit type</p>
+        <atom-button
+          buttonColor="bg-warning"
+          buttonText="Submit Button"
+          buttonType="submit"
+          icon="fa-solid fa-arrow-right"
+        ></atom-button>
+      </div>
+      <div>
+        <p class="text-info">Click button</p>
+        <atom-button
+          (onClickButton)="textClickButton()"
+          buttonColor="bg-info"
+          buttonText="Click Button"
+          buttonType="click"
+          icon="fa-solid fa-arrow-right"
+        ></atom-button>
+      </div>
+    </div>
+  </atom-frame>
+  <atom-frame borderColor="red" class="row">
+    <h3>Inputs</h3>
+    <hr />
+    <div class="d-flex justify-content-between flex-column flex-wrap">
+      <!-- Input type verilmezse default olarak text alır -->
+      <atom-input placeHolder="Default Input" inputType="text"></atom-input>
+      <!-- Girilmesi zorunlu alanlarda zorunlu alan belirteci * konulur -->
+      <atom-input
+        placeHolder="Required Input"
+        [requiredField]="requiredControl"
+      ></atom-input>
+      <!-- Giriş yapılmasını istemediğimiz inputlarda kullanılır -->
+      <atom-input
+        placeHolder="Disabled Input"
+        [setDisabled]="inputSetDisabled"
+      ></atom-input>
+      <!-- Parola tipinde olan inputlarda parola göster/gizle işlemi -->
+      <atom-input
+        placeHolder="Password Input"
+        inputType="password"
+        iconShow="fa-solid fa-eye"
+        iconHide="fa-solid fa-eye-slash"
+      ></atom-input>
+      <atom-input
+        placeHolder="Search Input"
+        inputType="text"
+        iconShow="fa-solid fa-magnifying-glass"
+        iconHide="fa-solid fa-magnifying-glass"
+      ></atom-input>
+      <!--Input a ts de oluşturduğumuz formgruop ataması, inputun name i ile valuesi okuma işlemleri, inputa giriş yapılmış mı yapılmamış mı testi-->
+      <atom-input
+        placeHolder="Form Input"
+        inputType="text"
+        [form]="formGroupName"
+        name="valueAlınanYerdekiIsım"
+        formControlName="valueAlınanYerdekiIsımIleAynı"
+        (ngModelChange)="checkIsValid()"
+      ></atom-input>
+    </div>
+  </atom-frame>
+  <atom-frame borderColor="gray" class="row">
+    <h3>Select</h3>
+    <hr />
+    <atom-select [datas]="options"></atom-select>
+  </atom-frame>
+  <atom-frame borderColor="blue" backgroundColor="#f1f1f1" class="row">
+    <h3>Headers</h3>
+    <hr />
+    <atom-header
+      fontSize="32px"
+      color="red"
+      fontWeight="500"
+      headerText="Özellikleri verilerek yeni başlıklar oluşturabiliriz."
+    ></atom-header>
+    <atom-header
+      fontSize="24px"
+      color="pink"
+      fontWeight="500"
+      headerText="
+        Resimli arka plan görüntüsü kullanmak için atom-background-image componenti kullanılmalı
+      "
+    ></atom-header>
+    <atom-header
+      fontSize="28px"
+      color="black"
+      fontWeight="400"
+      headerText="Özellikleri verilerek yeni başlıklar oluşturabiliriz."
+    ></atom-header>
+  </atom-frame>
+  <atom-frame borderColor="#FFD3CE" class="row">
+    <h3>Toastr Message</h3>
+    <hr />
+    <atom-toastr-message
+      toastrHeader="merhaba"
+      toastrContent="mesaj içerik"
+    ></atom-toastr-message>
+  </atom-frame>
+  <atom-frame borderColor="#21d22c" class="row">
+    <h3>Frames</h3>
+    <hr />
+    <atom-frame borderColor="gray" backgroundColor="pink">
+      <h3>arka planı ve border rengini kendimiz veriyoruz.</h3> </atom-frame
+    ><atom-frame borderColor="yellow">
+      <h3>arka planı rengi verilmemiş bir çerçeve.</h3> </atom-frame
+    ><atom-frame>
+      <h3>
+        arka planı rengi verilmemiş ve kenarlık rengi verilmemiş bir çerçeve.
+      </h3>
+    </atom-frame>
+  </atom-frame>
+  <atom-frame borderColor="green">
+    <h3>Image contents</h3>
+    <hr />
+    <atom-background-image>
+      <atom-image-content-frame
+        imageSrc="./assets/login.jpg"
+        width="350px"
+        height="410px"
+        ><atom-frame backgroundColor="#fff" class="borderFrame">
+          <div
+            class="d-flex align-items-center justify-content-center flex-column w-100"
+          >
+            <img src="./assets/marvel-banner-transparent.png" />
+            <atom-header
+              headerText="Login"
+              fontSize="32px"
+              fontWeight="600"
+              color="#04587C"
+            ></atom-header>
+            <atom-input placeHolder="username" class="w-100"></atom-input>
+            <atom-input placeHolder="password" class="w-100"></atom-input>
+            <atom-button buttonText="Login"></atom-button>
+            <small class="mt-2 fw-bold text-decoration-underline"
+              ><a href="#" class="text-dark">Register new account.</a></small
+            >
+          </div>
+        </atom-frame>
+      </atom-image-content-frame></atom-background-image
+    ></atom-frame
+  >
+  <atom-frame borderColor="pink" class="row">
+    <h3>Product Card</h3>
+    <hr />
+    <div class="d-flex gap-3">
+      <molecule-product-card
+        imageSrc="./assets/phone.jpg"
+      ></molecule-product-card
+      ><molecule-product-card
+        imageSrc="./assets/phone.jpg"
+      ></molecule-product-card>
+    </div>
+  </atom-frame>
+  <atom-frame borderColor="#666" class="row"
+    ><h3>Product Summary</h3>
+    <hr />
+    <atom-product-summary></atom-product-summary
+  ></atom-frame>
+  <atom-frame borderColor="purple" class="row"
+    ><h3>Customer Info</h3>
+    <hr />
+    <customer-info></customer-info>
+  </atom-frame>
+  <atom-frame borderColor="#DEB2E7" class="row"
+    ><h3>Product Detail Summary</h3>
+    <hr />
+    <atom-product-detail-summary></atom-product-detail-summary>
+  </atom-frame>
+  <atom-frame borderColor="#507ABA" class="row"
+    ><h3>Product Detail Card</h3>
+    <hr />
+    <atom-product-detail-card></atom-product-detail-card>
+  </atom-frame>
+  <atom-frame borderColor="#507ABA" class="row"
+    ><h3>Product Admin Item</h3>
+    <hr />
+    <atom-admin-product-item></atom-admin-product-item>
+  </atom-frame>
+  <atom-frame borderColor="#285039" class="row"
+    ><h3>Customer List Item</h3>
+    <hr />
+    <atom-customer-list-item></atom-customer-list-item>
+  </atom-frame>
+</div>

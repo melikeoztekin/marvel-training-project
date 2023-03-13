@@ -1,0 +1,44 @@
+<atom-frame borderColor="#04587C20" padding="10px" margin="0 0 10px 0">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4">
+      <img [src]="phoneImage" class="img-fluid" alt="" />
+    </div>
+    <div class="col-12 col-sm-6 col-md-8 my-3">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <atom-header
+            headerText="{{ phoneBrand }} - {{ phoneModel }}"
+            fontWeight="500"
+            fontSize="24px"
+            color="#04587C"
+          ></atom-header>
+          <hr />
+        </div>
+        <div class="col-12 col-md-4"><h5>Internal Memory</h5></div>
+        <div class="col-12 col-md-8">
+          <atom-select [datas]="internalMemories"></atom-select>
+        </div>
+        <div class="col-12 col-md-4"><h5>RAM Memory</h5></div>
+        <div class="col-12 col-md-8">
+          <atom-select [datas]="ramMemories"></atom-select>
+        </div>
+        <div class="col-12 col-md-4"><h5>Color</h5></div>
+        <div class="col-12 col-md-8">
+          <atom-select [datas]="colors"></atom-select>
+        </div>
+        <div class="col-6 col-md-4 my-2"><h5>Screen Size</h5></div>
+        <div class="col-6 col-md-8 my-2">{{ screenSize }}</div>
+        <div class="col-6 col-md-4 my-2">
+          <h5>Camera Resolution</h5>
+        </div>
+        <div class="col-6 col-md-8 my-2">{{ cameraResolution }}</div>
+        <div class="col-6 col-md-4 my-2">
+          <h5>Warrantly Type</h5>
+        </div>
+        <div class="col-6 col-md-8 my-2">
+          {{ phoneBrand }} {{ warrantlyType }}
+        </div>
+      </div>
+    </div>
+  </div>
+</atom-frame>

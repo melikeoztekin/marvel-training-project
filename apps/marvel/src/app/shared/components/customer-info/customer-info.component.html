@@ -1,0 +1,14 @@
+<div class="customer-info py-3 px-3 mt-md-0 my-sm-3 mb-4">
+  <atom-header
+    headerText="Customer Info"
+    fontSize="20px"
+    fontWeight="500"
+  ></atom-header>
+  <hr class="mb-3" />
+  <ul *ngFor="let customer of customers">
+    <li><strong>ID :&nbsp;</strong>{{ customer.id }}</li>
+    <li><strong>Name :&nbsp;</strong>{{ customer.name }}</li>
+    <li><strong>Username :&nbsp;</strong>{{ customer.userName }}</li>
+    <li><strong>Email :&nbsp;</strong>{{ customer.email }}</li>
+  </ul>
+</div>

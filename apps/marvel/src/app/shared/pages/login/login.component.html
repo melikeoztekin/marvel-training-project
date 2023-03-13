@@ -1,0 +1,47 @@
+<atom-background-image>
+  <atom-image-content-frame
+    imageSrc="./assets/login.jpg"
+    width="350px"
+    height="410px"
+    ><atom-frame backgroundColor="#fff" class="borderFrame">
+      <form [formGroup]="loginForm" (submit)="onLogin()">
+        <div
+          class="d-flex align-items-center justify-content-center flex-column w-100"
+        >
+          <img src="./assets/marvel-banner-transparent.png" />
+          <atom-header
+            headerText="Login"
+            fontSize="32px"
+            fontWeight="600"
+            color="#04587C"
+          ></atom-header>
+          <atom-input
+            formControlName="userName"
+            placeHolder="username"
+            (ngModelChange)="checkIsValid()"
+            class="w-100"
+          ></atom-input>
+          <atom-input
+            formControlName="password"
+            placeHolder="password"
+            (ngModelChange)="checkIsValid()"
+            class="w-100"
+            inputType="password"
+            iconShow="fa-solid fa-eye"
+            iconHide="fa-solid fa-eye-slash"
+          ></atom-input>
+          <atom-button
+            [buttonType]="'submit'"
+            buttonText="Login"
+            [isDisabled]="isButtonDisable"
+          ></atom-button>
+          <small class="mt-2 fw-bold text-decoration-underline"
+            ><a href="/register" class="text-dark"
+              >Register new account.</a
+            ></small
+          >
+        </div>
+      </form>
+    </atom-frame>
+  </atom-image-content-frame>
+</atom-background-image>

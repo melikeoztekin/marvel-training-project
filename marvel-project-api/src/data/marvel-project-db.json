@@ -1,0 +1,313 @@
+{
+  "userTypes": [
+    {
+      "id": 1,
+      "userType": "admin"
+    },
+    {
+      "id": 2,
+      "userType": "customer"
+    }
+  ],
+  "users": [
+    {
+      "id": 1000,
+      "userTypeId": 1,
+      "userName": "marvel",
+      "name": "Marvel Informatics",
+      "email": "marvel@example.com",
+      "password": "marvel123",
+      "access_token": "marvel"
+    },
+    {
+      "id": 1001,
+      "userTypeId": 1,
+      "userName": "etiya",
+      "name": "Etiya Informatics",
+      "email": "etiya@example.com",
+      "password": "etiya123",
+      "access_token": "etiya"
+    },
+    {
+      "id": 1002,
+      "userTypeId": 2,
+      "userName": "jane",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "password": "jane123",
+      "access_token": "jane"
+    },
+    {
+      "id": 1003,
+      "userTypeId": 2,
+      "userName": "bob",
+      "name": "Bob Johnson",
+      "email": "bobjohnson@example.com",
+      "password": "bob123",
+      "access_token": "bob"
+    },
+    {
+      "id": 1004,
+      "userTypeId": 2,
+      "userName": "john",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "john123",
+      "access_token": "john"
+    },
+    {
+      "id": 1005,
+      "userTypeId": 2,
+      "userName": "leanne",
+      "name": "Leanne Graham",
+      "email": "leannegraham@example.com",
+      "password": "leanne123",
+      "access_token": "leanne"
+    },
+    {
+      "id": 1006,
+      "userTypeId": 2,
+      "email": "melike@gmail.com",
+      "userName": "melike",
+      "name": "melike oztekin",
+      "password": "melike",
+      "access_token": "melike"
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "phoneImage": "./assets/productImages/iphone11problack.jpg",
+      "phoneBrand": "Iphone",
+      "phoneModel": "11 Pro",
+      "price": 1500,
+      "screenSize": "5.85 inch",
+      "cameraResolution": "12 MP",
+      "warrantlyType": "Iphone",
+      "internalMemory": "64 GB",
+      "ramMemory": "4 GB",
+      "color": "black"
+    },
+    {
+      "id": 2,
+      "phoneImage": "./assets/productImages/iphone12promaxblue.jpg",
+      "phoneBrand": "Iphone",
+      "phoneModel": "12 Pro Max",
+      "price": 1800,
+      "screenSize": "6.06 inch",
+      "cameraResolution": "16 MP",
+      "warrantlyType": "Iphone",
+      "internalMemory": "128 GB",
+      "ramMemory": "4 GB",
+      "color": "blue"
+    },
+    {
+      "id": 3,
+      "phoneImage": "./assets/productImages/samsungA71gray.jpg",
+      "phoneBrand": "Samsung",
+      "phoneModel": "A71",
+      "price": 1000,
+      "screenSize": "6.06 inch",
+      "cameraResolution": "16 MP",
+      "warrantlyType": "Samsung",
+      "internalMemory": "256 GB",
+      "ramMemory": "8 GB",
+      "color": "gray"
+    },
+    {
+      "id": 4,
+      "phoneImage": "./assets/productImages/redminote11blue.jpg",
+      "phoneBrand": "Xiaomi",
+      "phoneModel": "Redmi Note 11",
+      "price": 1000,
+      "screenSize": "6.06 inch",
+      "cameraResolution": "16 MP",
+      "warrantlyType": "Xiaomi",
+      "internalMemory": "128 GB",
+      "ramMemory": "4 GB",
+      "color": "blue"
+    },
+    {
+      "id": 5,
+      "phoneImage": "./assets/productImages/huaweinova9blue.jpg",
+      "phoneBrand": "Huawei",
+      "phoneModel": "Nova 9",
+      "price": 1000,
+      "screenSize": "6.43 inch",
+      "cameraResolution": "16 MP",
+      "warrantlyType": "Huawei",
+      "internalMemory": "128 GB",
+      "ramMemory": "4 GB",
+      "color": "blue"
+    },
+    {
+      "id": 6,
+      "phoneImage": "./assets/productImages/casperviaf30white.jpg",
+      "phoneBrand": "Casper",
+      "phoneModel": "VIA F30",
+      "price": 900,
+      "screenSize": "6.43 inch",
+      "cameraResolution": "16 MP",
+      "warrantlyType": "Casper",
+      "internalMemory": "128 GB",
+      "ramMemory": "4 GB",
+      "color": "white"
+    },
+    {
+      "id": 7,
+      "phoneImage": "./assets/productImages/realme5igreen.jpg",
+      "phoneBrand": "Realme",
+      "phoneModel": "5i",
+      "price": 1000,
+      "screenSize": "6.3 inch",
+      "cameraResolution": "12 MP",
+      "warrantlyType": "Realme",
+      "internalMemory": "64 GB",
+      "ramMemory": "3 GB",
+      "color": "green"
+    },
+    {
+      "id": 8,
+      "phoneImage": "./assets/productImages/generalmobile22red.jpg",
+      "phoneBrand": "General Mobile",
+      "phoneModel": "22",
+      "price": 800,
+      "screenSize": "5.4 inch",
+      "cameraResolution": "12 MP",
+      "warrantlyType": "GM",
+      "internalMemory": "64 GB",
+      "ramMemory": "2 GB",
+      "color": "red"
+    }
+  ],
+  "orders": [
+    {
+      "id": 100000,
+      "userId": 1000,
+      "offers": [
+        {
+          "id": 10000,
+          "phoneBrand": "Oppo",
+          "phoneModel": "Reno 7",
+          "price": 1000,
+          "screenSize": "6.43 inch",
+          "cameraResolution": "16 MP",
+          "warrantlyType": "Oppo",
+          "internalMemory": "64 GB",
+          "ramMemory": "3 GB",
+          "color": "blue"
+        },
+        {
+          "id": 10001,
+          "phoneBrand": "Samsung",
+          "phoneModel": "A71",
+          "price": 1000,
+          "screenSize": "6.06 inch",
+          "cameraResolution": "16 MP",
+          "warrantlyType": "Samsung",
+          "internalMemory": "128 GB",
+          "ramMemory": "4 GB",
+          "color": "gray"
+        }
+      ],
+      "totalPrice": 2000
+    },
+    {
+      "id": 100001,
+      "userId": 1002,
+      "offers": [
+        {
+          "id": 10003,
+          "phoneBrand": "Iphone",
+          "phoneModel": "12 Pro Max",
+          "price": 1800,
+          "screenSize": "6.06 inch",
+          "cameraResolution": "16 MP",
+          "warrantlyType": "Iphone",
+          "internalMemory": "128 GB",
+          "ramMemory": "8 GB",
+          "color": "black"
+        },
+        {
+          "id": 10004,
+          "phoneBrand": "Samsung",
+          "phoneModel": "A71",
+          "price": 1000,
+          "screenSize": "6.06 inch",
+          "cameraResolution": "16 MP",
+          "warrantlyType": "Samsung",
+          "internalMemory": "128 GB",
+          "ramMemory": "4 GB",
+          "color": "black"
+        }
+      ],
+      "totalPrice": 2800
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "color": "black"
+    },
+    {
+      "id": 2,
+      "color": "white"
+    },
+    {
+      "id": 3,
+      "color": "gray"
+    },
+    {
+      "id": 4,
+      "color": "blue"
+    },
+    {
+      "id": 5,
+      "color": "green"
+    },
+    {
+      "id": 6,
+      "color": "red"
+    }
+  ],
+  "internalMemories": [
+    {
+      "id": 1,
+      "internalMemory": "32 GB"
+    },
+    {
+      "id": 2,
+      "internalMemory": "64 GB"
+    },
+    {
+      "id": 3,
+      "internalMemory": "128 GB"
+    },
+    {
+      "id": 4,
+      "internalMemory": "256 GB"
+    }
+  ],
+  "ramMemories": [
+    {
+      "id": 1,
+      "ramMemory": "3 GB"
+    },
+    {
+      "id": 2,
+      "ramMemory": "4 GB"
+    },
+    {
+      "id": 3,
+      "ramMemory": "6 GB"
+    },
+    {
+      "id": 4,
+      "ramMemory": "8 GB"
+    },
+    {
+      "id": 5,
+      "ramMemory": "12 GB"
+    }
+  ]
+}

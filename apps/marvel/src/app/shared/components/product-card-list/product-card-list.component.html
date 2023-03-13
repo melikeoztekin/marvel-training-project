@@ -1,0 +1,10 @@
+<div class="d-flex flex-wrap gap-3 justify-content-center">
+  <div *ngFor="let product of productList">
+    <molecule-product-card
+      phoneImage="{{ product.phoneImage }}"
+      phoneBrand="{{ product.phoneBrand }}"
+      phoneModel="{{ product.phoneModel }}"
+      price="{{ product.price }}"
+    ></molecule-product-card>
+  </div>
+</div>

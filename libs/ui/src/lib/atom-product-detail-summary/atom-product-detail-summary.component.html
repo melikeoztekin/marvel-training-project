@@ -1,0 +1,24 @@
+<atom-frame borderColor="#999" margin="0 0 20px 0" padding="10px">
+  <atom-header
+    headerText="{{ phoneBrand }} - {{ phoneModel }}"
+    fontWeight="500"
+    fontSize="16px"
+  ></atom-header>
+  <hr />
+  <ul class="my-2 text-bold">
+    <li><strong>Internal Memory :&nbsp; </strong>{{ internalMemory }}</li>
+    <li><strong>RAM Memory :&nbsp;</strong> {{ ramMemory }}</li>
+    <li><strong>Color :&nbsp;</strong> {{ color }}</li>
+  </ul>
+  <hr />
+  <div class="d-flex align-items-center justify-content-end mt-3 flex-row">
+    <small>Product price : &nbsp;</small>
+    <atom-header
+      headerText="$ {{ price }}"
+      fontWeight="500"
+      fontSize="18px"
+    ></atom-header>
+    <strong class="mx-2">|</strong>
+    <small><a href="#" class="text-danger">Delete</a></small>
+  </div>
+</atom-frame>

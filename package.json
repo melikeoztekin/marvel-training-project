@@ -2,7 +2,10 @@
   "name": "marvel-training-project",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve",
+    "ui-start": "nx serve ui-kit --port=4201"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.2.0",
@@ -13,7 +16,10 @@
     "@angular/platform-browser": "~15.2.0",
     "@angular/platform-browser-dynamic": "~15.2.0",
     "@angular/router": "~15.2.0",
+    "@auth0/angular-jwt": "^5.1.2",
     "@nrwl/angular": "15.8.5",
+    "bootstrap": "^5.2.3",
+    "ngx-toastr": "^16.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

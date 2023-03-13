@@ -1,0 +1,42 @@
+<div
+  *ngIf="errors ? errors.required && formSubmit : ''"
+  class="invalid-feedback"
+>
+  Bu Alan Zorunlu.
+</div>
+<div
+  *ngIf="errors ? errors.min && formSubmit && min : ''"
+  class="invalid-feedback"
+>
+  Bu Alan Zorunlu.
+</div>
+
+<div
+  *ngIf="errors ? errors.min && formSubmit && min == false : ''"
+  class="invalid-feedback"
+>
+  Minimum {{ errors.min.min }} olmalıdır.
+</div>
+
+<!-- Parolalar aynı olmalıdır. -->
+<div
+  *ngIf="errors ? errors.matching && formSubmit : ''"
+  class="invalid-feedback"
+>
+  Passwords must be the same.
+</div>
+
+<!-- Geçerli E-Posta adresi giriniz -->
+<div *ngIf="errors ? errors.email && formSubmit : ''" class="invalid-feedback">
+  Please enter valid e-mail address.
+</div>
+
+<!-- Minimum X karekter olmalıdır! -->
+<div
+  *ngIf="errors ? errors.minlength && formSubmit : ''"
+  class="invalid-feedback"
+>
+  Minimum
+  {{ errors.minlength.requiredLength }}
+  must be a character!
+</div>

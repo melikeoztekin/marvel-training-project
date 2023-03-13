@@ -1,0 +1,26 @@
+.input-container {
+  position: relative;
+  margin: 10px 0px;
+  .input-content {
+    display: flex;
+    .input-group-addon {
+      position: absolute;
+      right: 15px;
+      top: 7px;
+      border: 1px solid #fff;
+      border-left: 0px;
+      cursor: pointer;
+    }
+  }
+  .form-control {
+    width: 100% !important;
+
+    &:focus {
+      border-color: #ced4da;
+      box-shadow: none;
+    }
+  }
+  .form-control.ng-invalid {
+    border: 1px solid red;
+  }
+}

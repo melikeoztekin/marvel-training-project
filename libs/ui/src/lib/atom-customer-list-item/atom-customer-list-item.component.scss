@@ -1,0 +1,8 @@
+.customer-select {
+  border-radius: 10px;
+  border: 1px solid #04587c;
+  cursor: pointer;
+  &:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}

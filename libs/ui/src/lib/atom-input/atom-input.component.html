@@ -1,0 +1,31 @@
+<div class="input-container">
+  <input
+    [pattern]="pattern"
+    class="form-control"
+    [placeholder]="placeHolder + '' + (requiredField ? ' *' : '')"
+    [ngClass]="className"
+    [disabled]="setDisabled"
+    [type]="inputType"
+    [(ngModel)]="value"
+    [name]="name"
+    (ngModelChange)="onChange($event)"
+    (keypress)="onTouched()"
+  />
+  <div class="input-content">
+    <div class="input-group-addon">
+      <i
+        [ngClass]="iconShow"
+        aria-hidden="false"
+        *ngIf="!passwordShow"
+        (click)="passwordToggleEvent()"
+      >
+      </i>
+      <i
+        [ngClass]="iconHide"
+        aria-hidden="false"
+        *ngIf="passwordShow"
+        (click)="passwordToggleEvent()"
+      ></i>
+    </div>
+  </div>
+</div>

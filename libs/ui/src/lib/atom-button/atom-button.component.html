@@ -1,0 +1,10 @@
+<!--<button class="btn text-light" [ngClass]="buttonColor">{{buttonText}}</button>-->
+<button
+  class="btn my-2 text-light"
+  (click)="onClick($event)"
+  [ngClass]="buttonColor + ' ' + (isDisabled ? 'no-hover' : '')"
+  [disabled]="isDisabled"
+>
+  <i *ngIf="icon" [ngClass]="icon"></i>
+  {{ buttonText }}
+</button>

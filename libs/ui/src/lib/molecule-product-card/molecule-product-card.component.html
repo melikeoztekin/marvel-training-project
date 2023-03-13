@@ -1,0 +1,28 @@
+<div class="product-container">
+  <atom-frame borderColor="#04587C20" padding="0" class="product-frame">
+    <img
+      [src]="phoneImage"
+      [ngStyle]="{ width: width, height: height }"
+      class="product-image"
+    />
+    <div class="product-description">
+      <atom-header
+        fontSize="18px"
+        fontWeight="500"
+        headerText="{{ phoneBrand }} - {{ phoneModel }}"
+        color="#999"
+      ></atom-header>
+      <div class="d-flex justify-content-between align-items-center">
+        <atom-header
+          fontSize="24px"
+          fontWeight="700"
+          headerText="$ {{ price }}"
+        ></atom-header>
+        <atom-button
+          buttonText="Add To Cart"
+          icon="fa-solid fa-shopping-cart"
+        ></atom-button>
+      </div>
+    </div>
+  </atom-frame>
+</div>

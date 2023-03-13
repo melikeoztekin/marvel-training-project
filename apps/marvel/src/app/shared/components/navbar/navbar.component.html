@@ -1,0 +1,16 @@
+<div
+  class="w-100 px-5 py-2 mb-5 d-flex align-items-center justify-content-md-between flex-md-row flex-column"
+  style="box-shadow: rgba(100, 100, 111, 0.05) 0px 7px 20px 0px"
+>
+  <img
+    class="img-fluid mb-sm-3"
+    src="./assets/marvel-banner-transparent.png"
+    alt=""
+    style="max-width: 240px"
+  />
+  <div class="d-flex">
+    <atom-header headerText="{{ userName }}" fontWeight="500"></atom-header>
+    <strong class="mx-3">|</strong>
+    <div class="text-secondary" (click)="logout()">Log out</div>
+  </div>
+</div>

@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@marvel-training-project/atom-input": ["libs/atom-input/src/index.ts"],
+      "@marvel-training-project/atom-toastr-message": [
+        "libs/atom-toastr-message/src/index.ts"
+      ],
+      "@marvel-training-project/core": ["libs/core/src/index.ts"],
+      "@marvel-training-project/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

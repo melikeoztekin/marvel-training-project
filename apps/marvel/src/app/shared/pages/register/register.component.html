@@ -1,0 +1,87 @@
+<atom-background-image>
+  <atom-image-content-frame
+    imageSrc="./assets/register.jpg"
+    width="400px"
+    height="625px"
+    ><atom-frame backgroundColor="#fff" class="borderFrame">
+      <form [formGroup]="registerForm" (submit)="onRegister()">
+        <div
+          class="d-flex align-items-center justify-content-center flex-column w-100"
+        >
+          <img src="./assets/marvel-banner-transparent.png" />
+          <atom-header
+            headerText="Register"
+            fontSize="32px"
+            fontWeight="600"
+            color="#04587C"
+          ></atom-header>
+          <atom-input
+            placeHolder="email"
+            formControlName="email"
+            class="w-100"
+          ></atom-input>
+          <error-messages
+            [formSubmit]="true"
+            [errors]="registerForm.controls['email'].errors"
+          ></error-messages>
+          <atom-input
+            placeHolder="username"
+            formControlName="userName"
+            class="w-100"
+          ></atom-input>
+          <atom-input
+            placeHolder="firstname lastname"
+            formControlName="name"
+            class="w-100"
+          ></atom-input>
+          <atom-input
+            placeHolder="password"
+            formControlName="password"
+            id="password"
+            class="w-100"
+            inputType="password"
+            iconShow="fa-solid fa-eye"
+            iconHide="fa-solid fa-eye-slash"
+          ></atom-input>
+          <error-messages
+            [formSubmit]="true"
+            [errors]="registerForm.controls['password'].errors"
+          ></error-messages>
+          <atom-input
+            placeHolder="confirm password"
+            formControlName="confirmPassword"
+            id="confirmPassword"
+            class="w-100"
+            inputType="password"
+            iconShow="fa-solid fa-eye"
+            iconHide="fa-solid fa-eye-slash"
+          ></atom-input>
+          <error-messages
+            [formSubmit]="true"
+            [errors]="registerForm.controls['confirmPassword'].errors"
+          ></error-messages>
+          <select formControlName="userTypeId" class="form-select">
+            <option [value]="0">select user type</option>
+            <option
+              value="{{ userType.id }}"
+              *ngFor="let userType of userTypes"
+            >
+              {{ userType.userType }}
+            </option>
+          </select>
+          <atom-button
+            buttonText="Register"
+            [buttonType]="'submit'"
+            [isDisabled]="!registerForm.valid"
+          ></atom-button>
+          <small class="mt-2"
+            >Have already an account?
+            <a href="/login" class="fw-bold text-decoration-underline text-dark"
+              >Login here.
+            </a></small
+          >
+        </div>
+      </form>
+    </atom-frame>
+  </atom-image-content-frame>
+</atom-background-image>

@@ -1,0 +1,22 @@
+<atom-frame borderColor="#04587C20" padding="10px">
+  <atom-input
+    placeHolder="Customer search"
+    inputType="text"
+    iconShow="fa-solid fa-magnifying-glass"
+    iconHide="fa-solid fa-magnifying-glass"
+  ></atom-input>
+  <div
+    class="d-flex justify-content-around border border-secondary bg-dark text-white rounded py-2 mb-2"
+  >
+    <atom-header headerText="Customer Id" fontWeight="600"></atom-header
+    ><atom-header headerText="Username" fontWeight="600"></atom-header>
+  </div>
+  <div *ngFor="let customer of customerList">
+    <div class="mb-2">
+      <atom-customer-list-item
+        id="{{ customer.id }}"
+        name="{{ customer.userName }}"
+      ></atom-customer-list-item>
+    </div>
+  </div>
+</atom-frame>

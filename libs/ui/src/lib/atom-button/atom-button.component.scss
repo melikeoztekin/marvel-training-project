@@ -1,0 +1,23 @@
+button {
+  color: #fff;
+
+  i {
+    font-size: 16px;
+  }
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+    color: #fff;
+  }
+  &:after {
+    color: #fff;
+  }
+}
+.no-hover:hover {
+  box-shadow: none;
+}
+
+// buton için kullanılacak renkler burada tanımlanmalı
+
+.bg-blue {
+  background-color: #04587c;
+}

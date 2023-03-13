@@ -1,0 +1,31 @@
+<div class="cart-summary py-3 px-3 my-md-0 my-sm-3">
+  <atom-header
+    headerText="Cart Summary"
+    fontSize="20px"
+    fontWeight="500"
+    class="mb-3"
+  ></atom-header>
+  <div *ngFor="let product of cartSummaryProducts">
+    <atom-product-detail-summary
+      phoneBrand="{{ product.phoneBrand }}"
+      phoneModel="{{ product.phoneModel }}"
+      price="{{ product.price }}"
+      internalMemory="{{ product.internalMemory }}"
+      ramMemory="{{ product.ramMemory }}"
+      color="{{ product.color }}"
+    ></atom-product-detail-summary>
+  </div>
+  <div>
+    <div class="d-flex justify-content-end me-3 flex-row align-items-center">
+      <small>Total price : &nbsp;</small>
+      <atom-header
+        headerText="$ {{ 1019 }}"
+        fontWeight="700"
+        fontSize="20px"
+      ></atom-header>
+    </div>
+    <div class="d-flex justify-content-end me-3 flex-row align-items-center">
+      <atom-button buttonText="Buy" buttonColor="bg-dark"></atom-button>
+    </div>
+  </div>
+</div>
