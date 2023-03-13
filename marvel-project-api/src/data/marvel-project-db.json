@@ -72,6 +72,56 @@
       "name": "melike oztekin",
       "password": "melike",
       "access_token": "melike"
+    },
+    {
+      "id": 1007,
+      "userTypeId": 1,
+      "email": "kadir@gmail.com",
+      "userName": "kadir",
+      "name": "kadir demirel",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "access_token": "kadir"
+    },
+    {
+      "id": 1008,
+      "userTypeId": 2,
+      "email": "busra@gmail.com",
+      "userName": "busra",
+      "name": "busra oztekin",
+      "password": "busra123",
+      "confirmPassword": "busra123",
+      "access_token": "busra"
+    },
+    {
+      "id": 1009,
+      "userTypeId": 1,
+      "email": "fbhfd@gmail.com",
+      "userName": "kadir33",
+      "name": "dgvdg",
+      "password": "ggggg",
+      "confirmPassword": "ggggg",
+      "access_token": "kadir33"
+    },
+    {
+      "id": 1010,
+      "userTypeId": 1,
+      "email": "mmmm@gmail.com",
+      "userName": "oztekin",
+      "name": "melike öztekin",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "access_token": "oztekin"
+    },
+    {
+      "id": 1011,
+      "userTypeId": 1,
+      "email": "kkk@gmail.com",
+      "userName": "   sdefs",
+      "name": "  sedfs",
+      "password": "nnnn",
+      "confirmPassword": "nnnn",
+      "access_token": "   sdefs"
     }
   ],
   "offers": [

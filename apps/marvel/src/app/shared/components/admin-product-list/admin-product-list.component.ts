@@ -1,59 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductModel } from '../../models/product.model';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'admin-product-list',
   templateUrl: './admin-product-list.component.html',
   styleUrls: ['./admin-product-list.component.scss'],
 })
-export class AdminProductListComponent {
-  productList = [
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '140',
-      phoneImage: './assets/productImages/iphone11problack.jpg',
-    },
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '150',
-      phoneImage: './assets/productImages/iphone12promaxblue.jpg',
-    },
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '160',
-      phoneImage: './assets/productImages/samsungA71gray.jpg',
-    },
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '170',
-      phoneImage: './assets/productImages/redminote11blue.jpg',
-    },
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '180',
-      phoneImage: './assets/productImages/huaweinova9blue.jpg',
-    },
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '190',
-      phoneImage: './assets/productImages/casperviaf30white.jpg',
-    },
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '200',
-      phoneImage: './assets/productImages/realme5igreen.jpg',
-    },
-    {
-      phoneBrand: 'prodBrand',
-      phoneModel: 'prodModel',
-      price: '210',
-      phoneImage: './assets/productImages/generalmobile22red.jpg',
-    },
-  ];
+export class AdminProductListComponent implements OnInit {
+  products: ProductModel[] = [];
+
+  constructor(private _productService: ProductService) {}
+  ngOnInit(): void {
+    this.getProduct();
+  }
+
+  getProduct() {
+    this._productService.getList().subscribe((response) => {
+      this.products = response;
+      console.log(this.products);
+    });
+  }
 }

@@ -41,9 +41,7 @@
 .bg-info {
   background-color: #04587c !important;
 }
-
-select {
-  box-shadow: none !important;
+.hand-select {
   option {
     &:first-child {
       color: #ced4da;

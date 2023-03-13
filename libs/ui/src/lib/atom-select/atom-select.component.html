@@ -1,15 +1,13 @@
-<div class="form">
-  <div class="select-container">
-    <select
-      class="form-select"
-      [disabled]="setDisabled"
-      [(ngModel)]="value"
-      [name]="name"
-    >
-      <option value="">Choose</option>
-      <option *ngFor="let data of datas" [value]="data[valuefield]">
-        {{ data[textfield] }}
-      </option>
-    </select>
-  </div>
+<div class="select-container">
+  <select
+    class="form-select"
+    [disabled]="setDisabled"
+    [(ngModel)]="value"
+    [name]="name"
+  >
+    <option value="">Choose</option>
+    <option *ngFor="let data of datas" [value]="data">
+      {{ data }}
+    </option>
+  </select>
 </div>

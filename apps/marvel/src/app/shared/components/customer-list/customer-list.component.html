@@ -11,7 +11,7 @@
     <atom-header headerText="Customer Id" fontWeight="600"></atom-header
     ><atom-header headerText="Username" fontWeight="600"></atom-header>
   </div>
-  <div *ngFor="let customer of customerList">
+  <div *ngFor="let customer of customers">
     <div class="mb-2">
       <atom-customer-list-item
         id="{{ customer.id }}"

@@ -20,7 +20,7 @@
         <atom-header
           fontSize="24px"
           fontWeight="700"
-          headerText="$ {{ price }}"
+          headerText="{{ price | currency : '$' }}"
         ></atom-header>
         <atom-button
           buttonText="Add To Cart"

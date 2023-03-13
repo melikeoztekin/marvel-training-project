@@ -16,15 +16,39 @@
         </div>
         <div class="col-12 col-md-4"><h5>Internal Memory</h5></div>
         <div class="col-12 col-md-8">
-          <atom-select [datas]="internalMemories"></atom-select>
+          <select class="hand-select form-select">
+            <option [value]="0">select internal memory</option>
+            <option
+              value="{{ internalMemory.id }}"
+              *ngFor="let internalMemory of internalMemories2"
+            >
+              {{ internalMemory.internalMemory }}
+            </option>
+          </select>
+          <!--          <atom-select [datas]="internalMemories"></atom-select>-->
         </div>
-        <div class="col-12 col-md-4"><h5>RAM Memory</h5></div>
-        <div class="col-12 col-md-8">
-          <atom-select [datas]="ramMemories"></atom-select>
+        <div class="col-12 col-md-4 my-2"><h5>RAM Memory</h5></div>
+        <div class="col-12 col-md-8 my-2">
+          <select class="hand-select form-select">
+            <option [value]="0">select ram memory</option>
+            <option
+              value="{{ ramMemory.id }}"
+              *ngFor="let ramMemory of ramMemories2"
+            >
+              {{ ramMemory.ramMemory }}
+            </option>
+          </select>
+          <!--          <atom-select [datas]="ramMemories"></atom-select>-->
         </div>
         <div class="col-12 col-md-4"><h5>Color</h5></div>
         <div class="col-12 col-md-8">
-          <atom-select [datas]="colors"></atom-select>
+          <select class="hand-select form-select">
+            <option [value]="0">select color</option>
+            <option value="{{ color.id }}" *ngFor="let color of colors2">
+              {{ color.color }}
+            </option>
+          </select>
+          <!--          <atom-select [datas]="colors"></atom-select>-->
         </div>
         <div class="col-6 col-md-4 my-2"><h5>Screen Size</h5></div>
         <div class="col-6 col-md-8 my-2">{{ screenSize }}</div>
