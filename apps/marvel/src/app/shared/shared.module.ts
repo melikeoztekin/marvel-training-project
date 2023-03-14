@@ -17,6 +17,8 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { ProductDetailCardListComponent } from './components/product-detail-card-list/product-detail-card-list.component';
+import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -34,8 +36,15 @@ import { ProductDetailCardListComponent } from './components/product-detail-card
     ProductDetailsComponent,
     CartSummaryComponent,
     ProductDetailCardListComponent,
+    MainLayoutComponent,
   ],
-  imports: [CommonModule, UiModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    UiModule,
+    FormsModule,
+    ReactiveFormsModule,
+    Ng2SearchPipeModule,
+  ],
   exports: [
     CustomerInfoComponent,
     ProductDetailsComponent,

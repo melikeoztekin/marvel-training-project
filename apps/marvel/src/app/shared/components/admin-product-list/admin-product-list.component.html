@@ -3,8 +3,10 @@
   inputType="text"
   iconShow="fa-solid fa-magnifying-glass"
   iconHide="fa-solid fa-magnifying-glass"
+  [(ngModel)]="searchTerm"
+  name="search"
 ></atom-input>
-<div *ngFor="let product of products">
+<div *ngFor="let product of products | filter : searchTerm">
   <div class="mb-2">
     <atom-admin-product-item
       phoneImage="{{ product.phoneImage }}"

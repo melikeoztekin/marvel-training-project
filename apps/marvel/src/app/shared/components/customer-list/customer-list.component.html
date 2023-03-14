@@ -4,6 +4,8 @@
     inputType="text"
     iconShow="fa-solid fa-magnifying-glass"
     iconHide="fa-solid fa-magnifying-glass"
+    [(ngModel)]="searchTerm"
+    name="search"
   ></atom-input>
   <div
     class="d-flex justify-content-around border border-secondary bg-dark text-white rounded py-2 mb-2"
@@ -11,7 +13,7 @@
     <atom-header headerText="Customer Id" fontWeight="600"></atom-header
     ><atom-header headerText="Username" fontWeight="600"></atom-header>
   </div>
-  <div *ngFor="let customer of customers">
+  <div *ngFor="let customer of customers | filter : searchTerm">
     <div class="mb-2">
       <atom-customer-list-item
         id="{{ customer.id }}"

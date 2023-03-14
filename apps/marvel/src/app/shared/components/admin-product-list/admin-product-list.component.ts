@@ -9,6 +9,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class AdminProductListComponent implements OnInit {
   products: ProductModel[] = [];
+  searchTerm: any;
 
   constructor(private _productService: ProductService) {}
   ngOnInit(): void {
