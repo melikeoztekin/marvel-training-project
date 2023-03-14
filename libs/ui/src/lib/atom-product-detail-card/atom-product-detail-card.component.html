@@ -9,12 +9,12 @@
           <atom-header
             headerText="{{ phoneBrand }} - {{ phoneModel }}"
             fontWeight="500"
-            fontSize="24px"
+            fontSize="20px"
             color="#04587C"
           ></atom-header>
           <hr />
         </div>
-        <div class="col-12 col-md-4"><h5>Internal Memory</h5></div>
+        <div class="col-12 col-md-4"><h6>Internal Memory</h6></div>
         <div class="col-12 col-md-8">
           <select class="hand-select form-select">
             <option [value]="0">select internal memory</option>
@@ -27,7 +27,7 @@
           </select>
           <!--          <atom-select [datas]="internalMemories"></atom-select>-->
         </div>
-        <div class="col-12 col-md-4 my-2"><h5>RAM Memory</h5></div>
+        <div class="col-12 col-md-4 my-2"><h6>RAM Memory</h6></div>
         <div class="col-12 col-md-8 my-2">
           <select class="hand-select form-select">
             <option [value]="0">select ram memory</option>
@@ -40,7 +40,7 @@
           </select>
           <!--          <atom-select [datas]="ramMemories"></atom-select>-->
         </div>
-        <div class="col-12 col-md-4"><h5>Color</h5></div>
+        <div class="col-12 col-md-4"><h6>Color</h6></div>
         <div class="col-12 col-md-8">
           <select class="hand-select form-select">
             <option [value]="0">select color</option>
@@ -50,14 +50,14 @@
           </select>
           <!--          <atom-select [datas]="colors"></atom-select>-->
         </div>
-        <div class="col-6 col-md-4 my-2"><h5>Screen Size</h5></div>
+        <div class="col-6 col-md-4 my-2"><h6>Screen Size</h6></div>
         <div class="col-6 col-md-8 my-2">{{ screenSize }}</div>
         <div class="col-6 col-md-4 my-2">
-          <h5>Camera Resolution</h5>
+          <h6>Camera Resolution</h6>
         </div>
         <div class="col-6 col-md-8 my-2">{{ cameraResolution }}</div>
         <div class="col-6 col-md-4 my-2">
-          <h5>Warrantly Type</h5>
+          <h6>Warrantly Type</h6>
         </div>
         <div class="col-6 col-md-8 my-2">
           {{ phoneBrand }} {{ warrantlyType }}

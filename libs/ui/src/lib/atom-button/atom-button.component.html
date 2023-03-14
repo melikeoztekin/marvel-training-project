@@ -4,6 +4,7 @@
   (click)="onClick($event)"
   [ngClass]="buttonColor + ' ' + (isDisabled ? 'no-hover' : '')"
   [disabled]="isDisabled"
+  [ngStyle]="{ fontSize: fontSize }"
 >
   <i *ngIf="icon" [ngClass]="icon"></i>
   {{ buttonText }}

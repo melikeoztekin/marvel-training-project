@@ -11,6 +11,7 @@ export class AtomButtonComponent {
   @Input() buttonType!: string;
   @Input() isDisabled: boolean = false;
   @Input() icon!: string | null;
+  @Input() fontSize: string = '14px';
 
   @Output() onClickButton = new EventEmitter<any>();
 

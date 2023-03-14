@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxsModule } from '@ngxs/store';
+import { CartSummaryState } from './store/cart-summary.state';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -28,6 +30,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     }),
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
+    NgxsModule.forRoot([CartSummaryState]),
   ],
   providers: [],
   bootstrap: [AppComponent],

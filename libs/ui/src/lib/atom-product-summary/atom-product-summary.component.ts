@@ -9,4 +9,5 @@ export class AtomProductSummaryComponent {
   @Input() price: string = '120';
   @Input() phoneBrand: string = 'Phone Brand';
   @Input() phoneModel: string = 'Phone Model';
+  @Input() quantity: string;
 }
