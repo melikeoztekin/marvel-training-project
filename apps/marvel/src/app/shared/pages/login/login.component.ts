@@ -5,6 +5,9 @@ import { LoginModel } from '../../models/login.model';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../../../core/services/local-storage.service';
+import { SelectCustomer } from '../../../actions/select-customer.action';
+import { Store } from '@ngxs/store';
+import { GetUserName } from '../../../actions/navbar-info.action';
 
 @Component({
   selector: 'login',
@@ -18,7 +21,8 @@ export class LoginComponent implements OnInit {
     private _authService: AuthService,
     private _localStorageService: LocalStorageService,
     private _toastrService: ToastrService,
-    private _router: Router
+    private _router: Router,
+    private _store: Store
   ) {}
 
   ngOnInit(): void {
@@ -45,9 +49,12 @@ export class LoginComponent implements OnInit {
             if (response.userTypeId == 1) {
               this._toastrService.success('Login successful', 'Success');
               this._router.navigateByUrl('/admin-page');
+              this._store.dispatch(new GetUserName(response));
             } else {
               this._toastrService.success('Login successful');
               this._router.navigateByUrl('/customer-store');
+              this._store.dispatch(new SelectCustomer(response));
+              this._store.dispatch(new GetUserName(response));
             }
           } else {
             console.error('Giriş Başarısız');
@@ -64,15 +71,6 @@ export class LoginComponent implements OnInit {
     } else {
       console.error('alanları doldurman lazım');
       this._toastrService.warning('Please fill in all fields.', 'Warning');
-    }
-  }
-
-  isButtonDisable: boolean = true;
-  checkIsValid() {
-    if (this.loginForm.invalid) {
-      this.isButtonDisable = true;
-    } else {
-      this.isButtonDisable = false;
     }
   }
 }

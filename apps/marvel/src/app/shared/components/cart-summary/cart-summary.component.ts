@@ -1,35 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
+import {
+  CartSummaryState,
+  CartSummaryStateModel,
+} from '../../../store/cart-summary.state';
+import { Observable } from 'rxjs';
+import { RemoveCartItem } from '../../../actions/cart-summary.action';
+import { CartSummaryModel } from '../../models/cartSummary.model';
 
 @Component({
   selector: 'cart-summary',
   templateUrl: './cart-summary.component.html',
   styleUrls: ['./cart-summary.component.scss'],
 })
-export class CartSummaryComponent {
-  cartSummaryProducts = [
-    {
-      phoneBrand: 'prodBrand1',
-      phoneModel: 'prodModel1',
-      price: '452',
-      internalMemory: '64 GB',
-      ramMemory: '4 GB',
-      color: 'red',
-    },
-    {
-      phoneBrand: 'prodBrand2',
-      phoneModel: 'prodModel2',
-      price: '444',
-      internalMemory: '128 GB',
-      ramMemory: '6 GB',
-      color: 'black',
-    },
-    {
-      phoneBrand: 'prodBrand3',
-      phoneModel: 'prodModel3',
-      price: '123',
-      internalMemory: '256 GB',
-      ramMemory: '4 GB',
-      color: 'blue',
-    },
-  ];
+export class CartSummaryComponent implements OnInit {
+  @Select(CartSummaryState)
+  cartSummaryStateModel!: Observable<CartSummaryStateModel>;
+  degisken: CartSummaryStateModel;
+
+  constructor(private _store: Store) {
+    this.console();
+  }
+  removeCartItem(index: number) {
+    this._store.dispatch(new RemoveCartItem(index));
+  }
+
+  ngOnInit(): void {}
+
+  console() {
+    this.cartSummaryStateModel.subscribe((x) => {
+      this.degisken = x;
+      console.log(this.degisken);
+    });
+  }
 }

@@ -19,6 +19,7 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
 import { ProductDetailCardListComponent } from './components/product-detail-card-list/product-detail-card-list.component';
 import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { RouterLink } from '@angular/router';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -44,6 +45,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
+    RouterLink,
   ],
   exports: [
     CustomerInfoComponent,

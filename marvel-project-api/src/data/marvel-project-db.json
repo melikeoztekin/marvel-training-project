@@ -95,33 +95,13 @@
     },
     {
       "id": 1009,
-      "userTypeId": 1,
-      "email": "fbhfd@gmail.com",
-      "userName": "kadir33",
-      "name": "dgvdg",
-      "password": "ggggg",
-      "confirmPassword": "ggggg",
-      "access_token": "kadir33"
-    },
-    {
-      "id": 1010,
-      "userTypeId": 1,
+      "userTypeId": 2,
       "email": "mmmm@gmail.com",
-      "userName": "oztekin",
-      "name": "melike öztekin",
-      "password": "12345",
-      "confirmPassword": "12345",
-      "access_token": "oztekin"
-    },
-    {
-      "id": 1011,
-      "userTypeId": 1,
-      "email": "kkk@gmail.com",
-      "userName": "   sdefs",
-      "name": "  sedfs",
-      "password": "nnnn",
-      "confirmPassword": "nnnn",
-      "access_token": "   sdefs"
+      "userName": "mmmm",
+      "name": "mmmm",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "access_token": "mmmm"
     }
   ],
   "offers": [
@@ -133,7 +113,7 @@
       "price": 1500,
       "screenSize": "5.85 inch",
       "cameraResolution": "12 MP",
-      "warrantlyType": "Iphone",
+      "warrantlyType": "Iphone Türkiye guaranteed",
       "internalMemory": "64 GB",
       "ramMemory": "4 GB",
       "color": "black"
@@ -146,7 +126,7 @@
       "price": 1800,
       "screenSize": "6.06 inch",
       "cameraResolution": "16 MP",
-      "warrantlyType": "Iphone",
+      "warrantlyType": "Iphone Türkiye guaranteed",
       "internalMemory": "128 GB",
       "ramMemory": "4 GB",
       "color": "blue"
@@ -159,7 +139,7 @@
       "price": 1000,
       "screenSize": "6.06 inch",
       "cameraResolution": "16 MP",
-      "warrantlyType": "Samsung",
+      "warrantlyType": "Samsung Türkiye guaranteed",
       "internalMemory": "256 GB",
       "ramMemory": "8 GB",
       "color": "gray"
@@ -172,7 +152,7 @@
       "price": 1000,
       "screenSize": "6.06 inch",
       "cameraResolution": "16 MP",
-      "warrantlyType": "Xiaomi",
+      "warrantlyType": "Xiaomi Türkiye guaranteed",
       "internalMemory": "128 GB",
       "ramMemory": "4 GB",
       "color": "blue"
@@ -185,7 +165,7 @@
       "price": 1000,
       "screenSize": "6.43 inch",
       "cameraResolution": "16 MP",
-      "warrantlyType": "Huawei",
+      "warrantlyType": "Huawei Türkiye guaranteed",
       "internalMemory": "128 GB",
       "ramMemory": "4 GB",
       "color": "blue"
@@ -198,7 +178,7 @@
       "price": 900,
       "screenSize": "6.43 inch",
       "cameraResolution": "16 MP",
-      "warrantlyType": "Casper",
+      "warrantlyType": "Casper Türkiye guaranteed",
       "internalMemory": "128 GB",
       "ramMemory": "4 GB",
       "color": "white"
@@ -211,7 +191,7 @@
       "price": 1000,
       "screenSize": "6.3 inch",
       "cameraResolution": "12 MP",
-      "warrantlyType": "Realme",
+      "warrantlyType": "Realme Türkiye guaranteed",
       "internalMemory": "64 GB",
       "ramMemory": "3 GB",
       "color": "green"
@@ -224,7 +204,7 @@
       "price": 800,
       "screenSize": "5.4 inch",
       "cameraResolution": "12 MP",
-      "warrantlyType": "GM",
+      "warrantlyType": "GM Türkiye guaranteed",
       "internalMemory": "64 GB",
       "ramMemory": "2 GB",
       "color": "red"

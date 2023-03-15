@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
+import {
+  SelectCustomerState,
+  SelectCustomerStateModel,
+} from '../../../store/select-customer.state';
+import { Observable } from 'rxjs';
+import { SelectCustomer } from '../../../actions/select-customer.action';
 
 @Component({
   selector: 'customer-info',
@@ -6,12 +13,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./customer-info.component.scss'],
 })
 export class CustomerInfoComponent {
-  customers = [
-    {
-      id: 1524,
-      name: 'customer1',
-      userName: 'cust1',
-      email: 'cust1@gmail.com',
-    },
-  ];
+  @Select(SelectCustomerState)
+  selectCustomerStateModel!: Observable<SelectCustomerStateModel>;
+  constructor(private _store: Store) {}
 }

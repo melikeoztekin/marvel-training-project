@@ -7,14 +7,20 @@
     fontWeight="500"
     fontSize="16px"
   ></atom-header>
-  <div class="d-flex align-items-center justify-content-end mt-3 flex-row">
-    <small>Product price : &nbsp;</small>
+  <div
+    class="d-flex align-items-center flex-wrap justify-content-end mt-3 flex-row"
+  >
+    <small>Price : &nbsp;</small>
     <atom-header
-      headerText="$ {{ price }}"
+      headerText="{{ price | currency : '$' : 'symbol' : '3.0' }}"
       fontWeight="500"
       fontSize="18px"
     ></atom-header>
     <strong class="mx-2">|</strong>
-    <small><a href="#" class="text-danger">Delete</a></small>
+    <small>
+      <button (click)="onClick($event)" class="border-0 text-danger btn p-0">
+        Delete
+      </button>
+    </small>
   </div>
 </atom-frame>

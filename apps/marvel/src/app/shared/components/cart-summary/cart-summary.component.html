@@ -5,27 +5,41 @@
     fontWeight="500"
     class="mb-3"
   ></atom-header>
-  <div *ngFor="let product of cartSummaryProducts">
+  <div
+    *ngFor="
+      let item of (cartSummaryStateModel | async)?.cartSummary;
+      let i = index
+    "
+  >
     <atom-product-detail-summary
-      phoneBrand="{{ product.phoneBrand }}"
-      phoneModel="{{ product.phoneModel }}"
-      price="{{ product.price }}"
-      internalMemory="{{ product.internalMemory }}"
-      ramMemory="{{ product.ramMemory }}"
-      color="{{ product.color }}"
+      phoneBrand="{{ item.product.phoneBrand }}"
+      phoneModel="{{ item.product.phoneModel }}"
+      price="{{ item.product.price }}"
+      internalMemory="{{ item.product.internalMemory }}"
+      ramMemory="{{ item.product.ramMemory }}"
+      color="{{ item.product.color }}"
+      (onDelete)="removeCartItem(i)"
     ></atom-product-detail-summary>
   </div>
   <div>
     <div class="d-flex justify-content-end me-3 flex-row align-items-center">
       <small>Total price : &nbsp;</small>
       <atom-header
-        headerText="$ {{ 1019 }}"
+        headerText="{{
+          (cartSummaryStateModel | async)?.total
+            | currency : '$' : 'symbol' : '1.0'
+        }}"
         fontWeight="700"
         fontSize="20px"
       ></atom-header>
     </div>
     <div class="d-flex justify-content-end me-3 flex-row align-items-center">
-      <atom-button buttonText="Buy" buttonColor="bg-dark"></atom-button>
+      <atom-button
+        buttonText="Buy"
+        buttonColor="bg-dark"
+        [isDisabled]="(cartSummaryStateModel | async)?.quantity == 0"
+        buttonType="button"
+      ></atom-button>
     </div>
   </div>
 </div>

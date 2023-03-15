@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { UserModel } from '../../models/user.model';
+import { Select, Store } from '@ngxs/store';
+import {
+  SelectCustomerState,
+  SelectCustomerStateModel,
+} from '../../../store/select-customer.state';
+import { Observable } from 'rxjs';
+import { ProductModel } from '../../models/product.model';
+import { AddCartItem } from '../../../actions/cart-summary.action';
+import { SelectCustomer } from '../../../actions/select-customer.action';
 
 @Component({
   selector: 'customer-list',
@@ -11,7 +20,7 @@ export class CustomerListComponent implements OnInit {
   users: UserModel[] = [];
   customers: UserModel[] = [];
   searchTerm: any;
-  constructor(private _userService: UserService) {}
+  constructor(private _userService: UserService, private _store: Store) {}
   ngOnInit(): void {
     this.getUser();
   }
@@ -29,5 +38,8 @@ export class CustomerListComponent implements OnInit {
       return user.userTypeId == 2;
     });
     console.log('customer', this.customers);
+  }
+  selectCustomer(customers: UserModel) {
+    this._store.dispatch(new SelectCustomer(customers));
   }
 }

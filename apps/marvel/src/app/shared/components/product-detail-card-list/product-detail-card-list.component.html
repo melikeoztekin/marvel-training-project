@@ -1,13 +1,18 @@
-<div *ngFor="let product of productDetailList">
+<div
+  *ngFor="
+    let item of (cartSummaryStateModel | async)?.cartSummary;
+    let i = index
+  "
+>
   <atom-product-detail-card
-    phoneImage="{{ product.phoneImage }}"
-    phoneBrand="{{ product.phoneBrand }}"
-    phoneModel="{{ product.phoneModel }}"
-    cameraResolution="{{ product.cameraResolution }}"
-    screenSize="{{ product.screenSize }}"
-    warrantlyType="{{ product.warrantlyType }}"
-    color="{{ product.color }}"
-    internalMemory="{{ product.internalMemory }}"
-    ramMemory="{{ product.ramMemory }}"
+    phoneImage="{{ item.product.phoneImage }}"
+    phoneBrand="{{ item.product.phoneBrand }}"
+    phoneModel="{{ item.product.phoneModel }}"
+    cameraResolution="{{ item.product.cameraResolution }}"
+    screenSize="{{ item.product.screenSize }}"
+    warrantlyType="{{ item.product.warrantlyType }}"
+    color="{{ item.product.color }}"
+    internalMemory="{{ item.product.internalMemory }}"
+    ramMemory="{{ item.product.ramMemory }}"
   ></atom-product-detail-card>
 </div>

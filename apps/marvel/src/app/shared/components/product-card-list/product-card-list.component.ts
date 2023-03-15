@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductModel } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 import { Store } from '@ngxs/store';
-import { AddCartItem } from '../../../store/cart-summary.state';
+import { AddCartItem } from '../../../actions/cart-summary.action';
 
 @Component({
   selector: 'product-card-list',

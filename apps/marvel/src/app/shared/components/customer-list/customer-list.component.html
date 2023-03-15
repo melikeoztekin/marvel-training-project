@@ -26,6 +26,7 @@
       <atom-customer-list-item
         id="{{ customer.id }}"
         name="{{ customer.userName }}"
+        (click)="selectCustomer(customer)"
       ></atom-customer-list-item>
     </div>
   </div>

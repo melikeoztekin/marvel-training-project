@@ -5,10 +5,24 @@
     fontWeight="500"
   ></atom-header>
   <hr class="mb-3" />
-  <ul *ngFor="let customer of customers">
-    <li><strong>ID :&nbsp;</strong>{{ customer.id }}</li>
-    <li><strong>Name :&nbsp;</strong>{{ customer.name }}</li>
-    <li><strong>Username :&nbsp;</strong>{{ customer.userName }}</li>
-    <li><strong>Email :&nbsp;</strong>{{ customer.email }}</li>
+  <ul *ngIf="(selectCustomerStateModel | async)?.selectCustomer.customer">
+    <li>
+      <strong>ID :&nbsp;</strong
+      >{{ (selectCustomerStateModel | async)?.selectCustomer.customer.id }}
+    </li>
+    <li>
+      <strong>Name :&nbsp;</strong
+      >{{ (selectCustomerStateModel | async)?.selectCustomer.customer.name }}
+    </li>
+    <li>
+      <strong>Username :&nbsp;</strong
+      >{{
+        (selectCustomerStateModel | async)?.selectCustomer.customer.userName
+      }}
+    </li>
+    <li>
+      <strong>Email :&nbsp;</strong
+      >{{ (selectCustomerStateModel | async)?.selectCustomer.customer.email }}
+    </li>
   </ul>
 </div>

@@ -16,13 +16,17 @@
       phoneModel="{{ item.product.phoneModel }}"
       price="{{ item.product.price }}"
       quantity="{{ item.quantity }}"
+      (onDelete)="removeCartItem(i)"
     ></atom-product-summary>
   </div>
   <div>
     <div class="d-flex justify-content-end me-3 flex-row align-items-center">
       <small>Total price : &nbsp;</small>
       <atom-header
-        headerText="$ {{ (cartSummaryStateModel | async)?.total }}"
+        headerText="{{
+          (cartSummaryStateModel | async)?.total
+            | currency : '$' : 'symbol' : '1.0'
+        }}"
         fontWeight="700"
         fontSize="20px"
       ></atom-header>
@@ -31,6 +35,9 @@
       <atom-button
         buttonText="Product Details"
         buttonColor="bg-dark"
+        [isDisabled]="(cartSummaryStateModel | async)?.quantity == 0"
+        buttonType="button"
+        routerLink="/product-details"
       ></atom-button>
     </div>
   </div>

@@ -9,6 +9,10 @@ import { UiModule } from '@marvel-training-project/ui';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../../../marvel/src/app/shared/shared.module';
+import { NgxsModule } from '@ngxs/store';
+import { CartSummaryState } from '../../../marvel/src/app/store/cart-summary.state';
+import { SelectCustomerState } from '../../../marvel/src/app/store/select-customer.state';
+import { GetUserNameState } from '../../../marvel/src/app/store/navbar-info.state';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -22,6 +26,11 @@ import { SharedModule } from '../../../marvel/src/app/shared/shared.module';
     BrowserAnimationsModule,
     UiModule,
     SharedModule,
+    NgxsModule.forRoot([
+      CartSummaryState,
+      SelectCustomerState,
+      GetUserNameState,
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],

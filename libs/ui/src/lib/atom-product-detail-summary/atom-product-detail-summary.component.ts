@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'atom-product-detail-summary',
@@ -8,8 +8,13 @@ import { Component, Input } from '@angular/core';
 export class AtomProductDetailSummaryComponent {
   @Input() phoneBrand: string = 'Phone Brand';
   @Input() phoneModel: string = 'Phone Model';
-  @Input() price: string = '120';
-  @Input() internalMemory: string = '64 GB';
-  @Input() ramMemory: string = '4 GB';
-  @Input() color: string = 'black';
+  @Input() price: string = '';
+  @Input() internalMemory: string = '';
+  @Input() ramMemory: string = '';
+  @Input() color: string = '';
+
+  @Output() onDelete = new EventEmitter<any>();
+  onClick(event: Event) {
+    this.onDelete.emit(event);
+  }
 }

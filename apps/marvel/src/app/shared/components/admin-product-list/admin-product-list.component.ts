@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
+import { AddCartItem } from '../../../actions/cart-summary.action';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'admin-product-list',
@@ -11,7 +13,7 @@ export class AdminProductListComponent implements OnInit {
   products: ProductModel[] = [];
   searchTerm: any;
 
-  constructor(private _productService: ProductService) {}
+  constructor(private _productService: ProductService, private _store: Store) {}
   ngOnInit(): void {
     this.getProduct();
   }
@@ -21,5 +23,8 @@ export class AdminProductListComponent implements OnInit {
       this.products = response;
       console.log(this.products);
     });
+  }
+  addCart(productModel: ProductModel) {
+    this._store.dispatch(new AddCartItem(productModel));
   }
 }

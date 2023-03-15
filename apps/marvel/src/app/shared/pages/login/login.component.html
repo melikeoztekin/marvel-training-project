@@ -18,13 +18,11 @@
           <atom-input
             formControlName="userName"
             placeHolder="username"
-            (ngModelChange)="checkIsValid()"
             class="w-100"
           ></atom-input>
           <atom-input
             formControlName="password"
             placeHolder="password"
-            (ngModelChange)="checkIsValid()"
             class="w-100"
             inputType="password"
             iconShow="fa-solid fa-eye"
@@ -33,7 +31,7 @@
           <atom-button
             [buttonType]="'submit'"
             buttonText="Login"
-            [isDisabled]="isButtonDisable"
+            [isDisabled]="!loginForm.valid"
           ></atom-button>
           <small class="mt-2 fw-bold text-decoration-underline"
             ><a href="/register" class="text-dark"

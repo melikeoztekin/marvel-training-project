@@ -3,9 +3,9 @@ import { Select, Store } from '@ngxs/store';
 import {
   CartSummaryState,
   CartSummaryStateModel,
-  RemoveCartItem,
 } from '../../../store/cart-summary.state';
 import { Observable } from 'rxjs';
+import { RemoveCartItem } from '../../../actions/cart-summary.action';
 
 @Component({
   selector: 'product-summary-list',
@@ -19,21 +19,4 @@ export class ProductSummaryListComponent {
   removeCartItem(index: number) {
     this._store.dispatch(new RemoveCartItem(index));
   }
-  // cartSummaryProducts = [
-  // {
-  //   phoneBrand: 'prodBrand1',
-  //   phoneModel: 'prodModel1',
-  //   price: '452',
-  // },
-  // {
-  //   phoneBrand: 'prodBrand2',
-  //   phoneModel: 'prodModel2',
-  //   price: '444',
-  // },
-  // {
-  //   phoneBrand: 'prodBrand3',
-  //   phoneModel: 'prodModel3',
-  //   price: '123',
-  // },
-  // ];
 }

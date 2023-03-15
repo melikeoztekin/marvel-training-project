@@ -1,31 +1,45 @@
 <div class="product-item">
   <atom-frame borderColor="#04587C20" padding="5px"
-    ><div
-      class="d-flex justify-content-between align-items-center flex-column flex-md-row"
-    >
-      <div class="d-flex justify-content-between align-items-center gap-5">
-        <img
-          [src]="phoneImage"
-          [ngStyle]="{ width: width, height: height }"
-          class="product-image"
-        />
-        <atom-header
-          fontSize="16px"
-          fontWeight="500"
-          headerText="{{ phoneBrand }} - {{ phoneModel }}"
-          color="#222"
-        ></atom-header>
+    ><div class="row align-items-center">
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="row align-items-center justify-content-start flex-nowrap">
+          <div class="col-6 col-sm-6 col-md-6" style="width: fit-content">
+            <img
+              [src]="phoneImage"
+              [ngStyle]="{ width: width, height: height }"
+              class="product-image"
+            />
+          </div>
+          <div class="col-6 col-sm-6 col-md-6">
+            <atom-header
+              fontSize="16px"
+              fontWeight="500"
+              headerText="{{ phoneBrand }} - {{ phoneModel }}"
+              color="#222"
+            ></atom-header>
+          </div>
+        </div>
       </div>
-      <div class="d-flex justify-content-between align-items-center gap-5">
-        <atom-header
-          fontSize="20px"
-          fontWeight="600"
-          headerText="{{ price | currency : '$' }}"
-        ></atom-header>
-        <atom-button
-          buttonText="Add To Cart"
-          icon="fa-solid fa-shopping-cart"
-        ></atom-button>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6">
+            <div class="d-flex justify-content-end">
+              <atom-header
+                fontSize="20px"
+                fontWeight="600"
+                headerText="{{ price | currency : '$' : 'symbol' : '3.0' }}"
+              ></atom-header>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="d-flex justify-content-end">
+              <atom-button
+                buttonText="Add To Cart"
+                icon="fa-solid fa-shopping-cart"
+              ></atom-button>
+            </div>
+          </div>
+        </div>
       </div></div
   ></atom-frame>
 </div>

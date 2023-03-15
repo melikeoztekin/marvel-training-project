@@ -9,8 +9,15 @@
     style="max-width: 240px"
   />
   <div class="d-flex">
-    <atom-header headerText="{{ userName }}" fontWeight="500"></atom-header>
+    <div *ngIf="(getUserName | async)?.getUserName.user">
+      <atom-header
+        headerText="{{ (getUserName | async)?.getUserName.user.name }}"
+        fontWeight="500"
+      ></atom-header>
+    </div>
     <strong class="mx-3">|</strong>
-    <div class="text-secondary cursor-pointer" (click)="logout()">Log out</div>
+    <button class="text-secondary border-0 btn p-0" (click)="logout()">
+      Log out
+    </button>
   </div>
 </div>

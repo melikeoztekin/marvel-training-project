@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxsModule } from '@ngxs/store';
 import { CartSummaryState } from './store/cart-summary.state';
+import { SelectCustomerState } from './store/select-customer.state';
+import { GetUserNameState } from './store/navbar-info.state';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -30,7 +32,11 @@ import { CartSummaryState } from './store/cart-summary.state';
     }),
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
-    NgxsModule.forRoot([CartSummaryState]),
+    NgxsModule.forRoot([
+      CartSummaryState,
+      SelectCustomerState,
+      GetUserNameState,
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],

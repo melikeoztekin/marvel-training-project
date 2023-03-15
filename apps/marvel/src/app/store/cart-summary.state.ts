@@ -1,25 +1,18 @@
 import { CartSummaryModel } from '../shared/models/cartSummary.model';
-import { ProductModel } from '../shared/models/product.model';
 import { Action, State, StateContext } from '@ngxs/store';
+import { AddCartItem, RemoveCartItem } from '../actions/cart-summary.action';
 
-// Actions
-export class AddCartItem {
-  static readonly type = '[cartItem] Add';
-  constructor(public payload: ProductModel) {}
-}
-export class RemoveCartItem {
-  static readonly type = '[cartItem] Remove';
-  constructor(public payload: number) {}
-}
 // Sepetin başlangıç değerleri
 const initialState = {
   cartSummary: [],
   total: 0,
+  quantity: 0,
 };
 //State modeli
 export class CartSummaryStateModel {
   cartSummary: CartSummaryModel[];
   total: number;
+  quantity: number;
 }
 // State
 @State<CartSummaryStateModel>({
@@ -34,7 +27,8 @@ export class CartSummaryState {
   ) {
     const state = ctx.getState();
     const controls = state.cartSummary;
-    // const controlIndex = controls.findIndex((x) => x.productId == payload.id);
+    const quantity = state.quantity;
+    const controlIndex = controls.findIndex((x) => x.productId == payload.id);
     // if (controlIndex != -1) {
     //   controls[controlIndex].quantity += 1;
     //   controls[controlIndex].totalPrice += payload.price;
@@ -47,7 +41,11 @@ export class CartSummaryState {
     };
     controls.push(newCartItem);
     // }
-    ctx.patchState({ cartSummary: controls, total: totalSum(controls) });
+    ctx.patchState({
+      cartSummary: controls,
+      total: totalSum(controls),
+      quantity: quantity + 1,
+    });
   }
 
   @Action(RemoveCartItem) removeCartItem(
@@ -55,12 +53,14 @@ export class CartSummaryState {
     { payload }: RemoveCartItem
   ) {
     const state = ctx.getState();
+    const quantity = state.quantity;
     const newCartItems = state.cartSummary.filter(
       (x, index) => index != payload
     );
     ctx.patchState({
       cartSummary: newCartItems,
       total: totalSum(newCartItems),
+      quantity: quantity - 1,
     });
   }
 }

@@ -6,6 +6,7 @@ import { filter, map, Observable } from 'rxjs';
 import { LoginModel } from '../../shared/models/login.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { LocalStorageService } from './local-storage.service';
+import { Store } from '@ngxs/store';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,8 @@ export class AuthService {
   constructor(
     private _httpClient: HttpClient,
     private _jwtHelperService: JwtHelperService,
-    private _localStorageService: LocalStorageService
+    private _localStorageService: LocalStorageService,
+    private _store: Store
   ) {}
   login(loginModel: LoginModel): Observable<UserModel> {
     return this._httpClient
@@ -34,6 +36,7 @@ export class AuthService {
   logout() {
     this._localStorageService.remove('token');
   }
+
   register(userModel: UserModel): Observable<UserModel> {
     return this._httpClient.post<UserModel>(this.controllerUrl + '/users', {
       ...userModel,

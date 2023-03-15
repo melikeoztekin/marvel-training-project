@@ -15,9 +15,22 @@ import { AtomAdminProductItemComponent } from './atom-admin-product-item/atom-ad
 import { AtomCustomerListItemComponent } from './atom-customer-list-item/atom-customer-list-item.component';
 import { AtomProductDetailSummaryComponent } from './atom-product-detail-summary/atom-product-detail-summary.component';
 import { AtomProductDetailCardComponent } from './atom-product-detail-card/atom-product-detail-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { tokenGetter } from '../../../../apps/marvel/src/app/core/core.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+      },
+    }),
+  ],
   declarations: [
     AtomButtonComponent,
     AtomInputComponent,
