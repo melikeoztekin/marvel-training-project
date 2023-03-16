@@ -104,18 +104,18 @@ export class RegisterComponent implements OnInit {
               }
             },
             (error) => {
-              console.error(error);
+              console.log(error);
             }
           );
       } else {
-        console.error('Kullanıcı adı veya mail adresi kullanımda');
+        console.log('Kullanıcı adı veya mail adresi kullanımda');
         this._toastrService.error(
           'Username or e-mail address system is registered. Try logging in.',
           'Error'
         );
       }
     } else {
-      console.error('Kayıt Başarısız');
+      console.log('Kayıt Başarısız');
       this._toastrService.warning('Please fill in all fields.', 'Warning');
     }
   }

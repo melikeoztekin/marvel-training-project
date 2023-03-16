@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
@@ -7,6 +7,8 @@ import {
   GetUserNameState,
   GetUserStateModel,
 } from '../../../store/navbar-info.state';
+import { Reset } from '../../../actions/cart-summary.action';
+import { ResetCustomer } from '../../../actions/select-customer.action';
 
 @Component({
   selector: 'navbar',
@@ -14,7 +16,7 @@ import {
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  userName = 'firstName lastName';
+  @Input() userName: string = 'firstName lastName';
   constructor(
     private _authService: AuthService,
     private _router: Router,
@@ -24,7 +26,10 @@ export class NavbarComponent {
   logout() {
     this._authService.logout();
     this._router.navigateByUrl('/login');
+    this._store.dispatch(new Reset());
+    this._store.dispatch(new ResetCustomer());
   }
+
   @Select(GetUserNameState)
   getUserName!: Observable<GetUserStateModel>;
 }

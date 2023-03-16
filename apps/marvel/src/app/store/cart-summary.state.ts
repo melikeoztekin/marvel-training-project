@@ -1,6 +1,11 @@
 import { CartSummaryModel } from '../shared/models/cartSummary.model';
 import { Action, State, StateContext } from '@ngxs/store';
-import { AddCartItem, RemoveCartItem } from '../actions/cart-summary.action';
+import {
+  AddCartItem,
+  RemoveCartItem,
+  Reset,
+  UpdateCartItem,
+} from '../actions/cart-summary.action';
 
 // Sepetin başlangıç değerleri
 const initialState = {
@@ -63,7 +68,28 @@ export class CartSummaryState {
       quantity: quantity - 1,
     });
   }
+  @Action(UpdateCartItem) updateCartItem(
+    ctx: StateContext<CartSummaryStateModel>,
+    { payload }: UpdateCartItem
+  ) {
+    var state = ctx.getState();
+    state.cartSummary[payload.index].product = payload.product;
+
+    ctx.patchState({
+      cartSummary: state.cartSummary,
+      total: totalSum(state.cartSummary),
+      quantity: state.quantity,
+    });
+  }
+  @Action(Reset) reset(ctx: StateContext<CartSummaryStateModel>) {
+    ctx.patchState({
+      cartSummary: [],
+      total: 0,
+      quantity: 0,
+    });
+  }
 }
+
 // sepet tutarını günceller
 function totalSum(cartSummary: CartSummaryModel[]): number {
   let total = 0;

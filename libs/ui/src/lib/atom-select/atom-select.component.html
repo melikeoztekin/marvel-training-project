@@ -6,8 +6,8 @@
     [name]="name"
   >
     <option value="">Choose</option>
-    <option *ngFor="let data of datas" [value]="data">
-      {{ data }}
+    <option *ngFor="let data of datas" [value]="data.id">
+      {{ data.value }}
     </option>
   </select>
 </div>

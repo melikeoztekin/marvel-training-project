@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./atom-image-content-frame.component.scss'],
 })
 export class AtomImageContentFrameComponent {
-  @Input() imageSrc: string = '';
+  @Input() imageSrc: string = './assets/image-placeholder.jpg';
   @Input() width: string = '';
   @Input() height: string = 'auto';
 }

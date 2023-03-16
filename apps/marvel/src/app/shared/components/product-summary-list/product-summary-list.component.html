@@ -35,9 +35,19 @@
       <atom-button
         buttonText="Product Details"
         buttonColor="bg-dark"
-        [isDisabled]="(cartSummaryStateModel | async)?.quantity == 0"
+        [isDisabled]="
+          (cartSummaryStateModel | async)?.quantity == 0 ||
+          (selectCustomerStateModel | async)?.selectCustomer.customer ==
+            undefined
+        "
         buttonType="button"
-        routerLink="/product-details"
+        [routerLink]="
+          (cartSummaryStateModel | async)?.quantity == 0 ||
+          (selectCustomerStateModel | async)?.selectCustomer.customer ==
+            undefined
+            ? '*-*'
+            : '/product-details'
+        "
       ></atom-button>
     </div>
   </div>

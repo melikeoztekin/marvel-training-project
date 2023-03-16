@@ -8,3 +8,15 @@ export class RemoveCartItem {
   static readonly type = '[cartItem] Remove';
   constructor(public payload: number) {}
 }
+export class Reset {
+  static readonly type = '[resetCart] Reset';
+}
+export class UpdateCartItem {
+  static readonly type = '[cartItem] Update';
+  constructor(public payload: UpdateCartItemInputModel) {}
+}
+
+export class UpdateCartItemInputModel {
+  product: ProductModel;
+  index: number;
+}

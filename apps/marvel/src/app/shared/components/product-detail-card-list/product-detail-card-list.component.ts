@@ -1,11 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import {
   CartSummaryState,
   CartSummaryStateModel,
 } from '../../../store/cart-summary.state';
 import { Observable } from 'rxjs';
-import { RemoveCartItem } from '../../../actions/cart-summary.action';
 
 @Component({
   selector: 'product-detail-card-list',
@@ -15,8 +14,6 @@ import { RemoveCartItem } from '../../../actions/cart-summary.action';
 export class ProductDetailCardListComponent {
   @Select(CartSummaryState)
   cartSummaryStateModel!: Observable<CartSummaryStateModel>;
+
   constructor(private _store: Store) {}
-  removeCartItem(index: number) {
-    this._store.dispatch(new RemoveCartItem(index));
-  }
 }

@@ -1,6 +1,9 @@
 import { SelectCustomerModel } from '../shared/models/selectCustomer.model';
 import { Action, State, StateContext } from '@ngxs/store';
-import { SelectCustomer } from '../actions/select-customer.action';
+import {
+  ResetCustomer,
+  SelectCustomer,
+} from '../actions/select-customer.action';
 
 const initialState = {
   selectCustomer: {} as SelectCustomerModel,
@@ -21,6 +24,11 @@ export class SelectCustomerState {
     const state = ctx.getState();
     ctx.patchState({
       selectCustomer: { customerId: payload.id, customer: payload },
+    });
+  }
+  @Action(ResetCustomer) reset(ctx: StateContext<SelectCustomerStateModel>) {
+    ctx.patchState({
+      selectCustomer: {} as SelectCustomerModel,
     });
   }
 }

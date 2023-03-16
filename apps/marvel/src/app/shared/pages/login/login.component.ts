@@ -40,11 +40,7 @@ export class LoginComponent implements OnInit {
       this._authService.login(this.loginForm.value as LoginModel).subscribe(
         (response) => {
           if (response != undefined) {
-            console.error(
-              'Giriş Başarılı',
-              'userTpyeId :',
-              response.userTypeId
-            );
+            console.log('Giriş Başarılı', 'userTpyeId :', response.userTypeId);
             this._localStorageService.add('token', response.access_token);
             if (response.userTypeId == 1) {
               this._toastrService.success('Login successful', 'Success');
@@ -57,7 +53,7 @@ export class LoginComponent implements OnInit {
               this._store.dispatch(new GetUserName(response));
             }
           } else {
-            console.error('Giriş Başarısız');
+            console.log('Giriş Başarısız');
             this._toastrService.error(
               'User not found. Check your username  and password.',
               'Error'
@@ -65,11 +61,11 @@ export class LoginComponent implements OnInit {
           }
         },
         (error) => {
-          console.error(error);
+          console.log(error);
         }
       );
     } else {
-      console.error('alanları doldurman lazım');
+      console.log('alanları doldurman lazım');
       this._toastrService.warning('Please fill in all fields.', 'Warning');
     }
   }

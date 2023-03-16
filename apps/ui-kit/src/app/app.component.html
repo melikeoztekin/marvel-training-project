@@ -1,7 +1,8 @@
 <!-- Butona arka plan rengi verilmelidir-->
 <div class="container pt-5">
   <h2 class="text-center">- UI Kit -</h2>
-  <atom-frame borderColor="#31685C" class="row"> <navbar></navbar> </atom-frame
+  <atom-frame borderColor="#31685C" class="row">
+    <navbar userName="Name/UserName"></navbar> </atom-frame
   ><atom-frame borderColor="#61A1FE" class="row">
     <footer-black></footer-black>
   </atom-frame>
@@ -161,15 +162,16 @@
     <h3>Image contents</h3>
     <hr />
     <atom-background-image>
-      <atom-image-content-frame
-        imageSrc="./assets/login.jpg"
-        width="350px"
-        height="410px"
+      <atom-image-content-frame width="350px" height="410px"
         ><atom-frame backgroundColor="#fff" class="borderFrame">
           <div
             class="d-flex align-items-center justify-content-center flex-column w-100"
           >
-            <img src="./assets/marvel-banner-transparent.png" />
+            <img
+              src="./assets/image-placeholder.png"
+              width="200px"
+              height="50px"
+            />
             <atom-header
               headerText="Login"
               fontSize="32px"
@@ -191,12 +193,8 @@
     <h3>Product Card</h3>
     <hr />
     <div class="d-flex gap-3">
-      <molecule-product-card
-        imageSrc="./assets/phone.jpg"
-      ></molecule-product-card
-      ><molecule-product-card
-        imageSrc="./assets/phone.jpg"
-      ></molecule-product-card>
+      <molecule-product-card></molecule-product-card
+      ><molecule-product-card></molecule-product-card>
     </div>
   </atom-frame>
   <atom-frame borderColor="#666" class="row"

@@ -5,6 +5,9 @@
   "
 >
   <atom-product-detail-card
+    [index]="i"
+    [id]="item.productId"
+    [price]="item.product.price"
     phoneImage="{{ item.product.phoneImage }}"
     phoneBrand="{{ item.product.phoneBrand }}"
     phoneModel="{{ item.product.phoneModel }}"

@@ -6,7 +6,9 @@ import {
 } from '../../../store/cart-summary.state';
 import { Observable } from 'rxjs';
 import { RemoveCartItem } from '../../../actions/cart-summary.action';
-import { CartSummaryModel } from '../../models/cartSummary.model';
+import { OrderModel } from '../../models/order.model';
+import { OrderService } from '../../services/order.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'cart-summary',
@@ -16,21 +18,34 @@ import { CartSummaryModel } from '../../models/cartSummary.model';
 export class CartSummaryComponent implements OnInit {
   @Select(CartSummaryState)
   cartSummaryStateModel!: Observable<CartSummaryStateModel>;
-  degisken: CartSummaryStateModel;
+  orders: OrderModel[] = [];
 
-  constructor(private _store: Store) {
-    this.console();
+  constructor(
+    private _store: Store,
+    private _orderService: OrderService,
+    private _toastrService: ToastrService
+  ) {
+    // this.console();
   }
   removeCartItem(index: number) {
     this._store.dispatch(new RemoveCartItem(index));
+    this._toastrService.info('The product has been deleted from the cart');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.addOrder();
+  }
 
-  console() {
+  // console() {
+  //   this.cartSummaryStateModel.subscribe((x) => {
+  //     this.degisken = x;
+  //     console.log(this.degisken);
+  //   });
+  // }
+
+  addOrder() {
     this.cartSummaryStateModel.subscribe((x) => {
-      this.degisken = x;
-      console.log(this.degisken);
+      x.cartSummary;
     });
   }
 }

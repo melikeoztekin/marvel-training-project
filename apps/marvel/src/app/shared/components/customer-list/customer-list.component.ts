@@ -1,14 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { UserModel } from '../../models/user.model';
-import { Select, Store } from '@ngxs/store';
-import {
-  SelectCustomerState,
-  SelectCustomerStateModel,
-} from '../../../store/select-customer.state';
-import { Observable } from 'rxjs';
-import { ProductModel } from '../../models/product.model';
-import { AddCartItem } from '../../../actions/cart-summary.action';
+import { Store } from '@ngxs/store';
 import { SelectCustomer } from '../../../actions/select-customer.action';
 
 @Component({

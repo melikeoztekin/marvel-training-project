@@ -11,4 +11,5 @@ export class AtomFrameComponent {
   @Input() padding: string = '26px 52px 26px 52px';
   @Input() margin: string = '0';
   @Input() width: string = '100%';
+  @Input() imageSrc: string = './assets/image-placeholder.jpg';
 }

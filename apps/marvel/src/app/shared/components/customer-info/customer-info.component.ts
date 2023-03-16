@@ -5,7 +5,6 @@ import {
   SelectCustomerStateModel,
 } from '../../../store/select-customer.state';
 import { Observable } from 'rxjs';
-import { SelectCustomer } from '../../../actions/select-customer.action';
 
 @Component({
   selector: 'customer-info',

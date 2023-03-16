@@ -3,6 +3,7 @@ import { ProductModel } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 import { AddCartItem } from '../../../actions/cart-summary.action';
 import { Store } from '@ngxs/store';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'admin-product-list',
@@ -13,7 +14,11 @@ export class AdminProductListComponent implements OnInit {
   products: ProductModel[] = [];
   searchTerm: any;
 
-  constructor(private _productService: ProductService, private _store: Store) {}
+  constructor(
+    private _productService: ProductService,
+    private _store: Store,
+    private _toastrService: ToastrService
+  ) {}
   ngOnInit(): void {
     this.getProduct();
   }
@@ -26,5 +31,6 @@ export class AdminProductListComponent implements OnInit {
   }
   addCart(productModel: ProductModel) {
     this._store.dispatch(new AddCartItem(productModel));
+    this._toastrService.success('Add product to cart successful');
   }
 }
