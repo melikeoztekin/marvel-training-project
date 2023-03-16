@@ -33,12 +33,11 @@ export class AtomProductDetailCardComponent implements OnInit {
     ramMemory: new FormControl(''),
     color: new FormControl(''),
   });
-  internalMemories2 = [];
   colors: ColorModel[] = [];
   internalMemories: InternalMemoryModel[] = [];
   ramMemories: RamMemoryModel[] = [];
   @Input() phoneBrand: string = 'prodBrand';
-  @Input() phoneModel: string = 'prodModel';
+  @Input() phoneModel: string = 'phoneModel';
   @Input() phoneImage: string = './assets/image-placeholder.jpg';
   @Input() screenSize: string = 'X inc and up';
   @Input() cameraResolution: string = 'X-Y MP';
@@ -71,10 +70,6 @@ export class AtomProductDetailCardComponent implements OnInit {
     this.cartForm.controls.screenSize.setValue(this.screenSize);
     this.cartForm.controls.warrantlyType.setValue(this.warrantlyType);
     this.cartForm.controls.cameraResolution.setValue(this.cameraResolution);
-    // this.internalMemories2 = this.internalMemories.map((item) => ({
-    //   value: item.internalMemory,
-    //   id: item.id,
-    // }));
   }
 
   getColor() {

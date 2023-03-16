@@ -7,6 +7,8 @@ const MOCK_ATOM_BUTTON = {
   buttonColor: 'bg-blue',
   buttonType: undefined,
   isDisabled: false,
+  buttonText: undefined,
+  icon: undefined,
 };
 
 describe('ButtonComponent', () => {
@@ -33,6 +35,14 @@ describe('ButtonComponent', () => {
   it('should buttonType input decorator need default value', () => {
     const buttonType = component.buttonType;
     expect(buttonType).toBe(MOCK_ATOM_BUTTON.buttonType);
+  });
+  it('should buttonText input decorator need default value', () => {
+    const buttonText = component.buttonText;
+    expect(buttonText).toBe(MOCK_ATOM_BUTTON.buttonText);
+  });
+  it('should icon input decorator need default value', () => {
+    const icon = component.icon;
+    expect(icon).toBe(MOCK_ATOM_BUTTON.icon);
   });
   it('should isDisabled input decorator need default value', () => {
     const isDisabled = component.isDisabled;

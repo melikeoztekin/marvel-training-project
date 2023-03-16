@@ -18,7 +18,6 @@ import {
   GetUserStateModel,
 } from '../../../store/navbar-info.state';
 import { HttpClient } from '@angular/common/http';
-import { OrderStateModel } from '../../models/orderState.model';
 import { OrderModel } from '../../models/order.model';
 import { ResetCustomer } from '../../../actions/select-customer.action';
 
@@ -80,7 +79,7 @@ export class CartSummaryComponent {
           console.error(response);
         });
     }
-    this._toastrService.success('Successfuly');
+    this._toastrService.success('your order has been successfully created');
     this.getUserName.subscribe((user) => {
       if (user.getUserName.user.userTypeId == 1) {
         this._store.dispatch(new Reset());
@@ -93,23 +92,3 @@ export class CartSummaryComponent {
     });
   }
 }
-
-// (this.order = {
-//   ...this.order,
-//   id: Math.floor(Math.random() * 100000),
-//   ordersInfo: [],
-//   customerInfo: [],
-// })
-
-// this.selectCustomerStateModel.subscribe((x) => {
-//   x.selectCustomer;
-//   console.log(x.selectCustomer);
-//   this.cartSummaryStateModel.subscribe((x) => {
-//     x.cartSummary;
-//     console.log(x.cartSummary);
-//   });
-// });
-// this._orderService.addOrder(OrderStateModel).subscribe((response) => {
-//   response.id;
-//   console.log('orderstates');
-// });
