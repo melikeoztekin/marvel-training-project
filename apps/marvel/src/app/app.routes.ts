@@ -5,6 +5,7 @@ import { CustomerStoreComponent } from './shared/pages/customer-store/customer-s
 import { AdminPageComponent } from './shared/pages/admin-page/admin-page.component';
 import { ProductDetailsComponent } from './shared/pages/product-details/product-details.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { UserAdminGuard } from './core/guards/userAdmin.guard';
 
 export const appRoutes: Route[] = [
   {
@@ -27,7 +28,7 @@ export const appRoutes: Route[] = [
   {
     path: 'admin-page',
     component: AdminPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, UserAdminGuard],
   },
   {
     path: 'product-details',

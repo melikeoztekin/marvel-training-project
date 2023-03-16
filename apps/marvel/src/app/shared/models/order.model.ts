@@ -1,12 +1,7 @@
 export interface OrderModel {
   id: number;
+  productId: number;
   userId: number;
-  offers: OfferModel[];
-  totalPrice: number;
-}
-
-export interface OfferModel {
-  id: number;
   phoneBrand: string;
   phoneModel: string;
   price: number;
@@ -16,4 +11,5 @@ export interface OfferModel {
   internalMemory: string;
   ramMemory: string;
   color: string;
+  totalPrice: number;
 }

@@ -71,10 +71,10 @@ export class AtomProductDetailCardComponent implements OnInit {
     this.cartForm.controls.screenSize.setValue(this.screenSize);
     this.cartForm.controls.warrantlyType.setValue(this.warrantlyType);
     this.cartForm.controls.cameraResolution.setValue(this.cameraResolution);
-    this.internalMemories2 = this.internalMemories.map((item) => ({
-      value: item.internalMemory,
-      id: item.id,
-    }));
+    // this.internalMemories2 = this.internalMemories.map((item) => ({
+    //   value: item.internalMemory,
+    //   id: item.id,
+    // }));
   }
 
   getColor() {
@@ -96,9 +96,6 @@ export class AtomProductDetailCardComponent implements OnInit {
     });
   }
 
-  deneme(aa: string) {
-    console.log(aa);
-  }
   onchangeSelect() {
     this._store.dispatch(
       new UpdateCartItem({

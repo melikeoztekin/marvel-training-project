@@ -39,7 +39,7 @@
         buttonColor="bg-dark"
         [isDisabled]="(cartSummaryStateModel | async)?.quantity == 0"
         buttonType="submit"
-        (click)="addOrder()"
+        (click)="createOrder()"
       ></atom-button>
     </div>
   </div>

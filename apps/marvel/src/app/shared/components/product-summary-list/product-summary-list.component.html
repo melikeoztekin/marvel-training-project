@@ -41,13 +41,7 @@
             undefined
         "
         buttonType="submit"
-        [routerLink]="
-          (cartSummaryStateModel | async)?.quantity == 0 ||
-          (selectCustomerStateModel | async)?.selectCustomer.customer ==
-            undefined
-            ? '*-*'
-            : '/product-details'
-        "
+        (click)="isProductSummary()"
       ></atom-button>
     </div>
   </div>
