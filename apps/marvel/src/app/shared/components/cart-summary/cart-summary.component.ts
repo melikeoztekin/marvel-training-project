@@ -9,6 +9,11 @@ import { RemoveCartItem } from '../../../actions/cart-summary.action';
 import { OrderModel } from '../../models/order.model';
 import { OrderService } from '../../services/order.service';
 import { ToastrService } from 'ngx-toastr';
+import {
+  SelectCustomerState,
+  SelectCustomerStateModel,
+} from '../../../store/select-customer.state';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cart-summary',
@@ -18,12 +23,15 @@ import { ToastrService } from 'ngx-toastr';
 export class CartSummaryComponent implements OnInit {
   @Select(CartSummaryState)
   cartSummaryStateModel!: Observable<CartSummaryStateModel>;
+  @Select(SelectCustomerState)
+  selectCustomerStateModel!: Observable<SelectCustomerStateModel>;
   orders: OrderModel[] = [];
 
   constructor(
     private _store: Store,
     private _orderService: OrderService,
-    private _toastrService: ToastrService
+    private _toastrService: ToastrService,
+    private _router: Router
   ) {
     // this.console();
   }
@@ -44,8 +52,24 @@ export class CartSummaryComponent implements OnInit {
   // }
 
   addOrder() {
-    this.cartSummaryStateModel.subscribe((x) => {
-      x.cartSummary;
+    this.selectCustomerStateModel.subscribe((x) => {
+      x.selectCustomer;
+      console.log(x.selectCustomer);
+      this.cartSummaryStateModel.subscribe((x) => {
+        x.cartSummary;
+        console.log(x.cartSummary);
+      });
     });
+    // this.routePage();
   }
+
+  // routePage() {
+  //   if (
+  //     this.selectCustomerStateModel.subscribe((x) => {
+  //       x.selectCustomer.customer.userTypeId == 2;
+  //     })
+  //   ) {
+  //     this._router.navigateByUrl('/admin-page');
+  //   }
+  // }
 }
